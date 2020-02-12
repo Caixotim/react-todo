@@ -1,14 +1,13 @@
 .list {
-  border: 2px solid grey;
-  box-shadow: 0px 2px 2px #464e51;
-  padding: 12px 0;
-}
-
-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .empty-list {
+  font-size: 20px;
+  color: #464e51;
+  text-align: center;
+  height: 400px;
+  line-height: 400px;
 }

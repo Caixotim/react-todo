@@ -14,13 +14,10 @@ class TodoItem extends React.Component {
     const { item } = this.props;
 
     return (
-      <li className={"item " + (item.done ? "done" : "")}>
-        <input
-          type="checkbox"
-          checked={item.done}
-          onChange={this.handleItemDone}
-        ></input>
-        <span className="content">{item.content}</span>
+      <li className={`item ${item.done ? "done" : ""}`}>
+        <div className="content" onClick={this.handleItemDone}>
+          {item.content}
+        </div>
         <button className="delete-btn" onClick={this.handleDeleteItem}>
           DELETE
         </button>

@@ -6,7 +6,7 @@ const TodoList = ({ list, onDelete, onDone }) => {
   return (
     <div>
       {list.length === 0 ? (
-        <div className="empty-list">You have no todo's left, yay</div>
+        <div className="empty-list">You have no todo's left, yay!</div>
       ) : (
         <ul className="list">
           {list.map(item => (

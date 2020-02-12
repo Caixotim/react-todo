@@ -5,18 +5,8 @@ import AddTodo from "./AddTodo/AddTodo";
 
 class App extends React.Component {
   state = {
-    todoList: [
-      {
-        id: 1,
-        content: "item 1",
-        done: false
-      },
-      {
-        id: 2,
-        content: "item 2",
-        done: true
-      }
-    ]
+    lastTodoId: 0,
+    todoList: []
   };
 
   handleDelete = id => {
@@ -37,30 +27,32 @@ class App extends React.Component {
     });
 
     this.setState({
+      ...this.state,
       todoList: list
     });
   };
 
   handleAddItem = content => {
+    const newTodoId = this.state.lastTodoId + 1;
     const todoItem = {
-      id: Math.random(),
+      id: this.state.lastTodoId + 1,
       content,
       done: false
     };
 
     this.setState({
-      ...this.state,
+      lastTodoId: newTodoId,
       todoList: [...this.state.todoList, todoItem]
     });
   };
 
   render() {
     return (
-      <div className="main-page">
+      <div className="todo-app">
         <div>
           <AddTodo onAddTodo={this.handleAddItem}></AddTodo>
         </div>
-        <div>
+        <div className="list-grid">
           <TodoList
             list={this.state.todoList}
             onDelete={this.handleDelete}

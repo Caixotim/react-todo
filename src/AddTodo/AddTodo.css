@@ -4,9 +4,11 @@
   height: 20px;
   padding: 10px 8px;
   color: #464e51;
+  background-color: #fafafa;
+  font-size: 14px;
+  transition: width 0.3s ease-in-out;
 }
 .search:focus {
   outline: none;
-  width: 98%;
-  transition: width 0.3s ease-in-out;
+  width: 400px;
 }

@@ -1,3 +1,9 @@
-.main-page {
+.todo-app {
   padding: 20px 15px;
+  background-color: lightblue;
+  height: 100vh;
+}
+
+.list-grid {
+  margin-top: 15px;
 }
